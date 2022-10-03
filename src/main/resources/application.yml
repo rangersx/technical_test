@@ -1,0 +1,42 @@
+server:
+    port: 9091
+
+spring:
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            username: Tr3lL0_cL0n3
+            password: 53cr3t_P455W0rd
+            database: trello_clone_db
+
+logging:
+    level:
+        com.trello.clone: DEBUG
+
+springdoc:
+    api-docs:
+        path: /api-spec
+
+agile:
+    jwt:
+        access:
+            exp:
+                minutes: 5
+        refresh:
+            exp:
+                minutes: 30
+
+---
+
+spring:
+    config:
+        activate:
+            on-profile: test
+    data:
+        mongodb:
+            host: mongo
+            port: 27017
+            username: Tr3lL0_cL0n3
+            password: 53cr3t_P455W0rd
+            database: trello_clone_db

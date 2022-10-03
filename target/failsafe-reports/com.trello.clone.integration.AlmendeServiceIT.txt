@@ -1,0 +1,40 @@
+-------------------------------------------------------------------------------
+Test set: com.trello.clone.integration.AlmendeServiceIT
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 11, Errors: 0, Skipped: 0, Time elapsed: 43.178 s <<< FAILURE! - in com.trello.clone.integration.AlmendeServiceIT
+whenRefreshingWithValidToken_thenExpectNewTokenPair  Time elapsed: 0.319 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting actual not to be null
+
+whenRefreshingWithInvalidSession_thenExpectInvalidatedError  Time elapsed: 1.563 s  <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.status"
+Caused by: java.lang.IllegalArgumentException: json can not be null or empty
+
+whenRefreshAgain_thenExpectSessionNotFoundError  Time elapsed: 0.511 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<401 UNAUTHORIZED> but was:<404 NOT_FOUND>
+
+whenLoginWithInvalidPassword_thenExpectError  Time elapsed: 1.214 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<400 BAD_REQUEST> but was:<404 NOT_FOUND>
+
+whenLoginWithValidUsernamePassword_thenExpectNewTokenPair  Time elapsed: 0.009 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200 OK> but was:<409 CONFLICT>
+
+whenCreatingNewBoardWithValidPayload_thenExpectOkStatus  Time elapsed: 0.987 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200 OK> but was:<404 NOT_FOUND>
+
+whenCreatingNewColumnWithValidPayload_thenExpectOkStatus  Time elapsed: 0.012 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200 OK> but was:<404 NOT_FOUND>
+
+whenCreatingNewTaskWithValidParams_thenExpectOkStatus  Time elapsed: 0.005 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200 OK> but was:<404 NOT_FOUND>
+
+whenDeletingTaskWithValidParams_thenExpectOkStatus  Time elapsed: 0.006 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200 OK> but was:<404 NOT_FOUND>
+
+whenDeletingColumnWithValidParams_thenExpectOkStatus  Time elapsed: 0.013 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200 OK> but was:<404 NOT_FOUND>
+
+whenDeletingBoardWithValidParams_thenExpectOkStatus  Time elapsed: 0.015 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200 OK> but was:<404 NOT_FOUND>
+

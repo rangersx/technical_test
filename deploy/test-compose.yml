@@ -1,0 +1,37 @@
+version: '3.7'
+
+networks:
+    almende_net:
+        driver: bridge
+
+volumes:
+    almende_mongo_data:
+
+services:
+    mongo:
+        build: ./mongo-agile
+        image: test-mongo-agile
+        environment:
+            MONGO_INITDB_DATABASE: trello_clone_db
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: Y3SQSvDrDA6Q23BW
+        volumes:
+            - almende_mongo_data:/data/db
+        ports:
+            - "127.0.0.1:27017:27017"
+        networks:
+            - almende_net
+    almende-service:
+        build: ..
+        image: test-agile
+        ports:
+            - "9091:9091"
+            - "5005:5005"
+        environment:
+            - SPRING_PROFILES_ACTIVE=test
+            - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+        depends_on:
+            - mongo
+        networks:
+            - almende_net
+
