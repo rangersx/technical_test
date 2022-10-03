@@ -1,6 +1,5 @@
 # Assignment:
-
-Your task is to create a backend service for a trello clone app.
+Your task is to create a backend service (REST API) for a trello clone app with domain driven approach. <br/>
 Below is an example of a UI for the board page of the app.
 
 | to do | in progress | review | test  | deploy | done  |
@@ -13,11 +12,20 @@ It contains the trello board with multiple columns representing task's statuses.
 The user can add, modify (moving from 1 column to another), or delete task.
 To access the board page, the user have to be authenticated by the system using Oauth2
 
+# Test duration: 1 week (7 days)
+
+# Assessment points
+- REST API routing design
+- Application modelling and abstraction skill
+- Quality assessment with unit testing and functional API test
+- Deployment to cloud infrastructure (optional) 
+- Creation of Web UI (optional)
+
 # Setup
 
 1. Fork this repository to your own GitHub account.
 2. Install java 17 (temurin-17)
-3. Install docker and docker-compose,
+3. Install docker and docker-compose
     
 # Running existing tests
 After all the required tools are installed. Run the following command to execute the tests:
@@ -34,14 +42,16 @@ After running the tests you should see that some tests have passed and some fail
 
 # Note:
 - Even though we are using Java and Spring in this codebase, feel free to use any programming language or framework of your own choice. <br/>
+- Feel free to replace existing MongoDB with a database of your own choice. <br/>
 - The integration tests are using [testcontainers](https://www.testcontainers.org/) and testcontainers have been forked in multiple programming languages:
   - [go](https://golang.testcontainers.org/)
   - [node](https://github.com/testcontainers/testcontainers-node)
   - [java]([testcontainers](https://www.testcontainers.org/))
   - [rust](https://github.com/testcontainers/testcontainers-rs)
-- Feel free to rewrite the integration test in any of the above language if necessary
+
+Feel free to rewrite the integration test in any of the above language if you feel it is necessary <br/>
 Please take a look at the integration tests in: src/test/java/com/trello/clone/integration/*<br/>
-After reading the tests, you should have some sort of idea on how to fulfill the requirements for user stories below <br/>
+After reading the tests, you should have some sort of idea on how to fulfill the requirements for the user stories below <br/>
  
 ## User Stories
 
