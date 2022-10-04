@@ -18,7 +18,6 @@ To access the board page, the user have to be authenticated by the system using 
 - REST API routing design
 - Application modelling and abstraction skill
 - Quality assessment with unit testing and functional API test
-- Deployment to cloud infrastructure (optional) 
 - Creation of Web UI (optional)
 
 # Setup
@@ -27,18 +26,16 @@ To access the board page, the user have to be authenticated by the system using 
 2. Install java 17 (temurin-17)
 3. Install docker and docker-compose
     
-# Running existing tests
+# Running the tests
+Please take a look at the integration tests in: src/test/java/com/trello/clone/integration/AlmendeServiceIT<br/>
 After all the required tools are installed. Run the following command to execute the tests:
 ```sh 
 ./mvnw verify -DskipITs=false
 ```
-After running the tests you should see that some tests have passed and some failed.
-
-# Your Task:
-- Fix the failed tests.
-- Make sure that the tests that passed will still pass.
-- Pay attention to the "TODOS and NOTES" as it tells you what you need to do.
-- Once done, commit the changes and notify me by creating a pull request
+Or you can use IDE such as Intellij or Eclipse to run AlmendeServiceIT<br/>
+After running the tests you should see that some tests have passed and some have failed.<br/>
+Please fix the failed tests by creating the necessary endpoints and business logic.<br/>
+Make sure the tests that was once passed will still pass.<br/>
 
 # Note:
 - Even though we are using Java and Spring in this codebase, feel free to use any programming language or framework of your own choice. <br/>
@@ -50,9 +47,10 @@ After running the tests you should see that some tests have passed and some fail
   - [rust](https://github.com/testcontainers/testcontainers-rs)
 
 Feel free to rewrite the integration test in any of the above language if you feel it is necessary <br/>
-Please take a look at the integration tests in: src/test/java/com/trello/clone/integration/*<br/>
-After reading the tests, you should have some sort of idea on how to fulfill the requirements for the user stories below <br/>
- 
+You do not have to follow the existing project structure, feel free to implement your own or rewrite the entire source directory if need to. <br/>
+
+Here are the user stories that need to be fulfilled: <br/>
+
 ## User Stories
 
 ### In Identity Domain, as a User I :
