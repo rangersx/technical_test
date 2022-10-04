@@ -1,6 +1,6 @@
 # Assignment:
 Your task is to create a backend service (REST API) for a trello clone app with domain driven approach. <br/>
-Below is an example of a UI for the board page of the app.
+Below is an example of a UI for the board page of the app.<br/>
 
 | to do | in progress | review | test  | deploy | done  |
 |-------|-------------|--------|-------|--------|-------|
@@ -8,9 +8,11 @@ Below is an example of a UI for the board page of the app.
 |       | task 2      |        |       |        |       |
 |       |             |        |       |        | task4 |
 
-It contains the trello board with multiple columns representing task's statuses.
-The user can add, modify (moving from 1 column to another), or delete task.
-To access the board page, the user have to be authenticated by the system using Oauth2
+It contains the trello board with multiple columns representing task's statuses.<br/>
+The user can add, modify (moving from 1 column to another), or delete task.<br/>
+To access the board page, the user have to be authenticated by the system using Oauth2. <br/>
+
+<b>Please fork this repository to your own github account and create a pull request when done.</b>
 
 # Test duration: 1 week (7 days)
 
@@ -22,9 +24,10 @@ To access the board page, the user have to be authenticated by the system using 
 
 # Setup
 
-1. Fork this repository to your own GitHub account.
+1. Clone the repository
 2. Install java 17 (temurin-17)
 3. Install docker and docker-compose
+4. Install maven (optional)
     
 # Running the tests
 Please take a look at the integration tests in: src/test/java/com/trello/clone/integration/AlmendeServiceIT<br/>
