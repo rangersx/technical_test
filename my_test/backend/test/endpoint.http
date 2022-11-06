@@ -1,0 +1,116 @@
+# ====================================================
+#### AUTH GROUP
+# ====================================================
+
+### Get Connection
+GET http://localhost:8000/
+Accept: application/json
+
+### POST Register
+POST http://localhost:8000/api/v1/auth/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "full_name":"Aris Kurniawan",
+  "email":"admin@gmail.com",
+  "password":"12345678"
+}
+
+### POST Login
+POST http://localhost:8000/api/v1/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email":"admin@gmail.com",
+  "password":"12345678"
+}
+
+### Get User After Login
+GET http://localhost:8000/api/v1/auth/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3NDc2NTAsImlhdCI6MTY2Nzc0NzU5MCwiaXNzIjoiZmliZXItYXBpIiwidXNlcl9pZCI6MX0._Fm27SDH3WiK2hp447Xk_QrEKmWA0C9eOWzpOQTkiHk
+Accept: application/json
+
+# ====================================================
+#### TODO GROUP
+# ====================================================
+### GET All Todo by UserId
+GET http://localhost:8000/api/v1/todo/all/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3NTE2MTMsImlhdCI6MTY2Nzc0ODAxMywiaXNzIjoiZmliZXItYXBpIiwidXNlcl9pZCI6MX0.2XijAtvuL4MdvMjofp_6_LVHCxVd8aRVGr2CHNdPW_0
+Accept: application/json
+
+### Post todo
+POST http://localhost:8000/api/v1/todo/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3NTE2MTMsImlhdCI6MTY2Nzc0ODAxMywiaXNzIjoiZmliZXItYXBpIiwidXNlcl9pZCI6MX0.2XijAtvuL4MdvMjofp_6_LVHCxVd8aRVGr2CHNdPW_0
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "test",
+  "description": "test",
+  "user_id": 1,
+  "progress": 0,
+  "deadline": "2022-11-06"
+}
+
+#### Get All ById ByUserId Todo
+GET http://localhost:8000/api/v1/todo/all/1/0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3NDc2NTAsImlhdCI6MTY2Nzc0NzU5MCwiaXNzIjoiZmliZXItYXBpIiwidXNlcl9pZCI6MX0._Fm27SDH3WiK2hp447Xk_QrEKmWA0C9eOWzpOQTkiHk
+Accept: application/json
+
+#### Update Todo
+PUT http://localhost:8000/api/v1/todo/update/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3NjI5NjYsImlhdCI6MTY2Nzc1OTM2NiwiaXNzIjoiZmliZXItYXBpIiwidXNlcl9pZCI6MX0.zyungOriWIw6tdRwkZc3qfwOeLjVlzRdupMFVX7no4w
+Accept: application/json
+
+{
+  "title": "test2",
+  "description": "test2",
+  "user_id": 1,
+  "progress": 0,
+  "deadline": "2022-11-06"
+}
+
+#### Delete Todo
+DELETE http://localhost:8000/api/v1/todo/delete/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3NjQzMTUsImlhdCI6MTY2Nzc2MDcxNSwiaXNzIjoiZmliZXItYXBpIiwidXNlcl9pZCI6MX0.piOk66s5S1WPuA7dZObjImwBfEthh5tY7Bkksw5HFf4
+Accept: application/json
+
+# ====================================================
+#### TODO CATEGORY GROUP
+# ====================================================
+POST http://localhost:8000/api/v1/todo-category/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3NjQ1NTcsImlhdCI6MTY2Nzc2MDk1NywiaXNzIjoiZmliZXItYXBpIiwidXNlcl9pZCI6MX0.8IbeSMf6zZ8hEDj2y5OvbtHD4_0XY7izi8xifQB6T-4
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "progress",
+  "user_id": 1
+}
+
+#### Get All ByUserId Todo Category
+GET http://localhost:8000/api/v1/todo-category/all/user/0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3NjQ1NTcsImlhdCI6MTY2Nzc2MDk1NywiaXNzIjoiZmliZXItYXBpIiwidXNlcl9pZCI6MX0.8IbeSMf6zZ8hEDj2y5OvbtHD4_0XY7izi8xifQB6T-4
+Accept: application/json
+
+#### Get All ById Todo Category
+GET http://localhost:8000/api/v1/todo-category/all/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3NjQ1NTcsImlhdCI6MTY2Nzc2MDk1NywiaXNzIjoiZmliZXItYXBpIiwidXNlcl9pZCI6MX0.8IbeSMf6zZ8hEDj2y5OvbtHD4_0XY7izi8xifQB6T-4
+Accept: application/json
+
+#### Update Todo
+PUT http://localhost:8000/api/v1/todo-category/update/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3NjQ1NTcsImlhdCI6MTY2Nzc2MDk1NywiaXNzIjoiZmliZXItYXBpIiwidXNlcl9pZCI6MX0.8IbeSMf6zZ8hEDj2y5OvbtHD4_0XY7izi8xifQB6T-4
+Accept: application/json
+
+{
+  "name": "progres",
+  "user_id": 1
+}
+
+#### Delete Todo
+DELETE http://localhost:8000/api/v1/todo-category/delete/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3NjQzMTUsImlhdCI6MTY2Nzc2MDcxNSwiaXNzIjoiZmliZXItYXBpIiwidXNlcl9pZCI6MX0.piOk66s5S1WPuA7dZObjImwBfEthh5tY7Bkksw5HFf4
+Accept: application/json
